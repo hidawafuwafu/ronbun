@@ -1,0 +1,54 @@
+%!TEX root = main.tex
+
+\section{別ファイルのインクルード}
+
+文章が長くなってくると，見通しが悪くなります．
+そこで，ファイルを分割するのが有効です．
+\index{ぶんかつ@分割}
+今，表\ref{tab:filename}のようなファイルがあるものとします．
+
+\begin{table}[h]
+\caption{ファイル一覧}
+\label{tab:filename}
+\begin{center}
+\begin{tabular}{l|l}
+\hline
+ファイル名 & 内容 \\ \hline
+main.tex & 主となるファイル \\
+input.tex & 取り込むファイル \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{読み込む側の記述}
+main.tex中に，input.texを取り込むための記述は以下のようになります．
+読み込みたいファイルが複数有る場合は，その都度読み込んでください．
+\index{main.tex}
+\index{input.tex}
+
+\begin{itembox}[c]{main.tex中の記述}
+\begin{verbatim}
+\input{input}
+\end{verbatim}
+\end{itembox}
+
+\subsection{読まれる側の記述}
+input.tex中には，通常どおりの記述を行います．
+ただし，1行目に以下の様な記述を行ってください．
+これは，主となるファイルがmain.texであることを示しています．
+これが書いてあると，TeXShopがメインとなるファイルを探し，関連するすべてのファイルを一気にコンパイルしてくれます．
+
+もし，1行目にこの記述がない場合は，input.texをコンパイルしようとしてもbegin\{document\}が無い旨のエラーが出て止まってしまいます．
+（その場合でも，main.texのウィンドウからタイプセットすればコンパイル可能ですが，面倒なのでキチンと書いておくことを勧めます）
+\index{しゅとなるふぁいる@主となるファイル}
+\index{main.tex}
+なお，input.texに記述する内容は，1行目を除けばmain.texの一部がたまたま別ファイルになっているイメージです．
+つまり，あらためてbegin\{doccument\}などを書く必要はありません．
+
+\begin{itembox}[c]{input.texの1行目}
+\begin{verbatim}
+%!TEX root = main.tex
+\end{verbatim}
+\end{itembox}
+
