@@ -1,0 +1,219 @@
+body {
+  font-family: "Avenir Next";
+  background-image: url("../image/84595.png");
+}
+
+li {
+  list-style: none;
+}
+
+.main {
+  padding: 10px 30px;
+}
+
+.btn-square {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.btn-square:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+.btn-square2 {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #ff6347;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #ff4500;
+  border-radius: 3px;
+}
+.btn-square2:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+/* inputとtextareaのCSSを指定してください */
+input,textarea{
+  width:400px;
+  margin-top:10px;
+  margin-bottom:30px;
+  padding:20px;
+  font-size:18px;
+  border:1px solid #dee7ec;
+}
+
+/* contact-submitのCSSを指定してください */
+.contact-submit{
+  background-color:#dee7ec;
+  color:#889eab
+}
+
+.midashi h1{
+      text-align: center;
+      font-size: 25px;
+      margin: 0px;
+      color:#313131;
+}
+
+.container {
+  display: flex;
+  background-color: #00000000;
+  margin-top: 0px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.container2 {
+  display: flex;
+  background-color: #00000000;
+  height: 550px;
+  margin-top: 40px;
+  justify-content: center;
+  flex-wrap:wrap
+}
+
+header {
+  display: flex;
+  background-color: #00000000;
+  height: 70px;
+  margin-bottom: 15px;
+  justify-content: center;
+  flex-wrap:wrap
+}
+
+.item1{
+  margin: 50px;
+  flex-basis: 500px;
+}
+.item2{
+  margin: 50px;
+  background-color: #ffffff;
+  border: 3px solid #bbbbbb;
+}
+.item4{
+  margin: 40px;
+  background-color: #ffffff;
+  border: 3px solid #bbbbbb;
+  text-align:center
+}
+.item5{
+  margin: 40px;
+  background-color: #ffffff;
+  border: 3px solid #bbbbbb;
+  text-align:center
+}
+.item6{
+  margin: 40px;
+  background-color: #ffffff;
+  border: 3px solid #bbbbbb;
+  text-align:center
+}
+.item7{
+  margin: 40px;
+  background-color: #ffffff;
+  border: 3px solid #bbbbbb;
+  text-align:center
+}
+.item{
+  width: 250px;
+  height: 400px;
+  margin: 20px;
+  background-color: #ffffff;
+  border: 3px solid #bbbbbb;
+  text-align:center
+}
+.item9{
+  margin: 20px;
+  background-color: #ffffff;
+  border: 3px solid #bbbbbb;
+  text-align:center
+}
+.item10{
+  margin: 20px;
+  background-color: #ffffff;
+  border: 3px solid #bbbbbb;
+  text-align:center
+}
+.item11{
+  margin: 20px;
+  background-color: #ffffff;
+  border: 3px solid #bbbbbb;
+  text-align:center
+}
+.item12{
+  margin: 20px;
+  background-color: #00000000;
+}
+.item13{
+  margin: 0px;
+  width:500px;
+  text-align:center;
+  flex-basis: 400px;
+  flex-wrap: nowrap;
+}
+
+.item13 h1 {
+  font-size:20px;
+  font-weight:400;
+  padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: #f4f4f4;/*背景色*/
+  border-left: solid 5px #7db4e6;/*左線*/
+  border-bottom: solid 3px #d7d7d7;/*下線*/
+}
+.item14{
+  margin: 20px;
+  background-color: #00000000;
+}
+.item15{
+  margin: 20px;
+  background-color: #cccccc;
+  border: 3px solid #999999;
+  text-align:center;
+  flex-basis: 500px;
+}
+
+.item16{
+  margin: 25px;
+  background-color: #ffffff;
+  border: 3px solid #999999;
+  text-align:left;
+  flex-basis: 500px;
+}
+#area2 {
+  width: 90%;
+  height: 2em;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  background-color:#ffffff;
+}
+#btn2 {
+  background: -webkit-linear-gradient(top,#008dfd 30%,#0370ea 100%);
+  color: white;
+  text-shadow: 1px 1px 1px #076bd2;
+  border-radius: 3px;
+  border: 1px solid #076bd2;
+  padding: 8px 25px;
+  font-weight: 700;
+  font-size: 15px;
+}
+#btn2.select {
+  background: -webkit-linear-gradient(top,#f2739e 30%,#f23f7b 100%);
+  text-shadow: 1px 1px 1px #f1115c;
+  border: 1px solid #f1115c;
+}
+#select2 {
+  width: 200px;
+}

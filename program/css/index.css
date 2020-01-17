@@ -1,0 +1,107 @@
+body {
+  font-family: "Avenir Next";
+  background-image: url("../image/84595.png");
+}
+
+.btn-square{
+  background-color: #c5956b;
+  border: 1px dashed #FFF;
+  box-shadow: 0px 0px 0px 5px #c5956b;
+  font-size: 2.0em;
+
+}
+/* ここから下がボタンのCSS　*/
+.btn-animation-02 {
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  background-color: #c5956b;
+  border: 2px solid #c5956b;
+  font-size: 16px;
+  color: #c5956b;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 24px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.btn-animation-02 span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-animation-02::before,
+.btn-animation-02::after {
+  content: "";
+  display: block;
+  background-color: #FFF;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: .2s;
+}
+.btn-animation-02::before {
+  left: 0;
+}
+.btn-animation-02::after {
+  right: 0;
+}
+
+.btn-animation-02:hover:before,
+.btn-animation-02:hover:after {
+  width: 0;
+  background-color: #FFF;
+}
+
+.btn-animation-02:hover {
+  color: #FFF;
+}
+
+
+
+
+
+.container {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+  flex-wrap:wrap
+  background-color: rgba(255,0,0,0);
+}
+
+.item {
+    color:#313131;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 150px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    letter-spacing: 3px;
+    font-weight:400;
+    float: left;
+    background-color: rgba(255,0,0,0);
+}
+.item h1 {
+  position: relative;
+  background: #c5956b;
+  box-shadow: 0px 0px 0px 5px #c5956b;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  color: #454545;
+  font-size: 100px;
+}
+
+.item h1:after {
+  position: absolute;
+  content: '';
+  left: -7px;
+  top: -7px;
+  border-width: 0 0 15px 15px;
+  border-style: solid;
+  border-color: #fff #fff #a8d4ff;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
