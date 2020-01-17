@@ -174,7 +174,7 @@ Webレシピの開発\\
 「悪魔のように黒く、地獄のように熱く、天使のように純粋で、愛のように甘美である。」これはフランスの外交官である，シャルル＝モーリス・ド・タレーラン＝ペリゴールが遺したコーヒーの名言である．
 コーヒーはただの飲料物でありながらも，長い年月をかけて愛され，世界の人々を魅了してきた．それは日本も例外ではない．
 江戸時代初期に長崎の出島に持ち込まれた際は，一部の人間しか飲用はできなかったが，明治時代に文明開化が起きるとみるみるうちに一般層に普及していった．
-現代では，国際機関コーヒー機関（ICO）の「世界の国別コーヒー消費量」で4位を記録しているほどである．
+全日本コーヒー協会の統計資料「日本のコーヒー消費と株価」では，2018年のコーヒー消費量がおよそ470千トンを記録していることがみてとれる\cite{Railshon1}．
 
 コーヒーの流行は，ファーストウェーブと呼ばれる大量消費時代から始まり，その後，風味に重きが置かれたセカンドウェーブが到来する．
 そして近年では，高品質なコーヒーをより良い淹れ方で味わうサードウェーブコーヒーが流行している.
@@ -343,7 +343,7 @@ Webレシピの開発\\
 
 \begin{figure}[htbp]
  \begin{center}
-  \includegraphics[width=80mm]{figure/seisakutyuu.pdf}
+  \includegraphics[width=80mm]{figure/s1.pdf}
  \end{center}
   \caption{サイフォン}
   \label{fig:siphon}
@@ -360,7 +360,7 @@ Webレシピの開発\\
 
 \begin{figure}[htbp]
  \begin{center}
-  \includegraphics[width=80mm]{figure/seisakutyuu.pdf}
+  \includegraphics[width=80mm]{figure/c.pdf}
  \end{center}
   \caption{クレバードリッパー}
   \label{fig:cl}
@@ -378,7 +378,7 @@ Webレシピの開発\\
 
 \begin{figure}[htbp]
  \begin{center}
-  \includegraphics[width=80mm]{figure/seisakutyuu.pdf}
+  \includegraphics[width=80mm]{figure/a1.pdf}
  \end{center}
   \caption{エアロプレス}
   \label{fig:aero}
@@ -436,10 +436,10 @@ HTML単体の記述では，単調な文章表記やレイアウトになって�
 音声認識とは，人間が発する声をコンピュータ上で解析を行い，テキストとして認識する技術である．
 \subsubsection{\large{音声認識の仕組み}}
 音声認識の仕組みは利用するサービスによって異なるほか，その時代によっても音声認識の方法論が移り変わっている．
-河原（2018）の，音声認識の方法論の変遷を表として，表ref{tb:onsei}に示す．
+河原（2018）の，音声認識の方法論の変遷を表として，表\ref{tb:onsei}に示す．
 この表1を見ると現在の音声認識の方法論は4.5世代にあたり，ニューラルネットワークの利用が主流になっていることがわかる．
 ニューラルネットワークはいわば機械学習の類であり，それらを応用することで音声認識を成し遂げている．
-実際に，Google社の手がける音声認識サービス「Google Cloud Speech API」においてもニューラルネットワークモデルが利用されていることが明記されている\cite{Railshon1}．
+実際に，Google社の手がける音声認識サービス「Google Cloud Speech API」においてもニューラルネットワークモデルが利用されていることが明記されている\cite{Railshon2}．
 
 \begin{table}[h]
 \begin{center}
@@ -462,23 +462,6 @@ WebSpeechAPIとは，JavaScriptAPIの1つである．
 JavaScriptとWebブラウザのみで，音声の合成や音声認識を可能にする．
 音声の合成は入力した文字を機械側に発音させる機能であり，音声認識は音声をテキストとして入力する機能である，
 本Webアプリケーションの音声認識はこのWebSpeechAPIを使用している．
-
-\subsubsection{\large{音声認識を可能にするJavaScriptについて}}
-音声認識を可能にするJavaScriptは，宗定(2014)の記事を元に作成した「seramic.js」\cite{Railshon2},
-ページ間の移動を制御する「page.js」,「nylon.js」の3つのファイルによって実装している．
-「seramic.js」ファイルはWebSpeechAPIを用い，継続的に音声を聞き取り続けるためのプログラムである．
-「次へ」，「戻る」の発音がされた場合，「page.js」,「nylon.js」を呼び出し，ページの移動が行われる．
-フローチャートを図\ref{fig:huro}に示す
-
-\begin{figure}[htbp]
- \begin{center}
-  \includegraphics[width=80mm]{figure/seisakutyuu.pdf}
- \end{center}
-  \caption{音声認識フローチャート}
-  \label{fig:huro}
-\end{figure}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -533,21 +516,36 @@ JavaScriptとWebブラウザのみで，音声の合成や音声認識を可能�
 
 \subsubsection{\large{レシピ閲覧画面}}
 「レシピ閲覧画面」では，実際に器具ごとのコーヒー抽出レシピを閲覧できる．
-実際のレシピ閲覧画面を図\ref{fig:recipieturan}に示す．
+実際のレシピ閲覧画面を図\ref{fig:step1}，および図ref{fig:recipieturan}に示す．
 
 ページは抽出ステップごとに分割している．
 1つのステップ毎に，個別の画像と説明文を表示し，記載されている指示に従うことで，抽出を行うことができる．
 ステップ間は，画面上部のボタンを押すことで移動が可能であるほか，音声認識も実装している．
 画面下部の「音声認識を開始する」ボタンを押すことにより，音声認識処理が開始し，「次へ」・「戻る」の発音で，ステップ間の移動が可能である．
+\begin{figure}[htbp]
+ \begin{center}
+  \includegraphics[width=130mm]{figure/soturon3.pdf}
+ \end{center}
+  \caption{レシピ閲覧画面：器具の確認}
+  \label{fig:recipieturan}
+\end{figure}
 
 \begin{figure}[htbp]
  \begin{center}
   \includegraphics[width=130mm]{figure/soturon1.pdf}
  \end{center}
-  \caption{レシピ閲覧画面}
+  \caption{レシピ閲覧画面：抽出}
   \label{fig:recipieturan}
 \end{figure}
 
+\newpage
+
+\subsubsection{\large{音声認識の実装について}}
+音声認識の実装にはJavaScriptを使用した．
+宗定(2014)の記事を元に作成した「seramic.js」\cite{Railshon3},
+ページ間の移動を制御する「page.js」,「nylon.js」の3つのファイルによって実装している．
+「seramic.js」ファイルはWebSpeechAPIを用い，継続的に音声を聞き取り続けるためのプログラムである．
+「次へ」，「戻る」の発音がされた場合，「page.js」,「nylon.js」を呼び出し，ページの移動が行われる．
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -587,27 +585,28 @@ JavaScriptとWebブラウザのみで，音声の合成や音声認識を可能�
 \begin{thebibliography}{9}
 %\bibitem{kawahara}名前, ``書籍名'', 出版, Vol71, No11, 年, pp197-203
 \bibitem{Railshon1} 
-google ， ``Cloud Speech-to-Text''， \url{https://cloud.google.com/speech-to-text/?hl=ja}\\
+全日本コーヒー協会，``日本のコーヒー消費と株価''，\url{http://coffee.ajca.or.jp/wp-content/uploads/2019/04/data00c_2019_04.pdf}\\
 \bibitem{Railshon2} 
-宗定 洋平， ``[HTML5] Web Speech APIに入門'， \url{https://www.yoheim.net/blog.php?q=20140701}\\
+google ， ``Cloud Speech-to-Text''， \url{https://cloud.google.com/speech-to-text/?hl=ja}\\
 \bibitem{Railshon3} 
-OpenCV team，``OpenCV''，\url{https://opencv.org/}\\
-\bibitem{Railshon4} 
-Python Software Foundation， ``Python''， \url{https://www.python.org/}\\
-\bibitem{Railshon5} 
-神奈川工科大学 情報学部 情報工学科 信号処理応用研究室 ， ``標準画像／サンプルデータ''， \url{http://www.ess.ic.kanagawa-it.ac.jp/app_images_j.html#image_dl}\\
+宗定 洋平， ``[HTML5] Web Speech APIに入門'， \url{https://www.yoheim.net/blog.php?q=20140701}\\
 
-\bibitem{Railshon6} 
-paulrosen ， ``abcjsデモページ''， \url{https://abcjs.net/abcjs-editor.html}\\
+%\bibitem{Railshon4} 
+%Python Software Foundation， ``Python''， \url{https://www.python.org/}\\
+%\bibitem{Railshon5} 
+%神奈川工科大学 情報学部 情報工学科 信号処理応用研究室 ， ``標準画像／サンプルデータ''， \url{http://www.ess.ic.kanagawa-it.ac.jp/app_images_j.html#image_dl}\\
 
-\bibitem{Railshon7} 
-KoheiShitaune，``TrainingAssistant''，\url{https://github.com/shkh/TrainingAssistant}\\
+%\bibitem{Railshon6} 
+%paulrosen ， ``abcjsデモページ''， \url{https://abcjs.net/abcjs-editor.html}\\
 
-\bibitem{Railshon8} 
-教育芸術社 市川都志春 編著，``こどものバイエル第１集''，2004年10月30日初版発行，2018年3月第34版発行，pp5\\
+%\bibitem{Railshon7} 
+%KoheiShitaune，``TrainingAssistant''，\url{https://github.com/shkh/TrainingAssistant}\\
 
-\bibitem{Railshon9} 
-株式会社ドレミ楽譜出版社 橋本晃一 編著，``中級レベルで弾けるクラシック名曲ピアノ曲集''，1994年1月初版発行，2007年2月20日第7版発行，pp26-27\
+%\bibitem{Railshon8} 
+%教育芸術社 市川都志春 編著，``こどものバイエル第１集''，2004年10月30日初版発行，2018年3月第34版発行，pp5\\
+
+%\bibitem{Railshon9} 
+%株式会社ドレミ楽譜出版社 橋本晃一 編著，``中級レベルで弾けるクラシック名曲ピアノ曲集''，1994年1月初版発行，2007年2月20日第7版発行，pp26-27\
 
 \end{thebibliography}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -617,29 +616,9 @@ KoheiShitaune，``TrainingAssistant''，\url{https://github.com/shkh/TrainingAss
 \appendix
 \section{作成したプログラム}
 
-\section*{Square.py}
-\label{Square.py}
-\listinginput{1}{program/Square.py}
+\section*{index.html}
+\label{index.html}
+\listinginput{1}{program/index.html}
 \newpage
-
-\section*{Circle.py}
-\label{Circle.py}
-\listinginput{1}{program/Circle.py}
-\newpage
-
-\section*{Decision.rb}
-\label{Decision.rb}
-\listinginput{1}{program/Decision.rb}
-\newpage
-
-\section*{Line.py}
-\label{Line.py}
-\listinginput{1}{program/Line.py}
-\newpage
-
-\section*{index.py}
-\label{index.py}
-\listinginput{1}{program/index.py}
-\restoregeometry
 
 \end{document}
