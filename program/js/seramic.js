@@ -5,7 +5,7 @@ window.addEventListener('load', () => {
     let a = document.querySelector('#next_button');
     console.log(a);
 
-    document.querySelector('#next_button').addEventListener('click', () => { page.next(); console.log('next')});
+    document.querySelector('#next_button').addEventListener('click', () => { page.next(); });
     document.querySelector('#prev_button').addEventListener('click', () => { page.prev(); });
     (function () {
         var recognition;
