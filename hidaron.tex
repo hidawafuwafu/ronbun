@@ -411,7 +411,6 @@ macaroniは，スマートフォンアプリで使用できるWebレシピであ
 
 \newpage
 \section{\large{プログラミング言語と音声認識ついて}}
-本章では，システムを制作する上で利用するプログラミング言語と音声認識について説明する．
 \subsection{\large{HTML・CSSとは}}
 HTML(Hyper Text Markup Language)とは，プログラミング言語の1つである．主にWebページを作成する際に使用される言語である，
 単なる文字の集まりである文章に，見出し・ボタン・リストなどの役割を指定し，コンピュータに認識させることができる．
@@ -530,9 +529,13 @@ JavaScriptとWebブラウザのみで，音声の合成や音声認識を可能�
 \newpage
 
 \subsection{\large{音声認識の実装について}}
+はじめに，音声認識機能の全体の流れを説明する．
+図\ref{fig:onsei}に示すように，音声認識によって得られた音声データは，WebSpeechAPIによって外部処理が行われ，テキストに変換される．
+変換されたテキストが特定の文字「次へ」，「戻る」であった場合，それぞれに合わせた関数を呼び出し，ページ移動を行う．
+
 音声認識の実装には2つのJavaScriptファイル「seramic.js」と「page.js」を使用する．
-「seramic.js」は主に音声認識を実装するJavaScriptファイルである．
-「page.js」は，音声認識やボタンの押下によるページ移動を実装するJavaScriptファイルである．
+「seramic.js」は，主に音声認識を継続的に実行するJavaScriptファイルである．
+「page.js」は，ページ移動を実装するJavaScriptファイルである．
 
 「seramic.js」は，宗定(2014)の記事に述べられているソースコードを元に作成した\cite{Railshon9}．
 元のソースコードは音声認識を継続して行い，認識した音声をテキストとして表示するプログラムである．
@@ -558,7 +561,7 @@ else if (interimText === "戻る") page.prev();
     => { page.prev(); });
  \end{lstlisting}
  
- page.next();とpage.prev();の処理は「page.js」にて行なっている． 
+ page.next()とpage.prev()の処理は「page.js」にて行なっている． 
  \begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
   next() {
     let number = this.pages.indexOf( this.now );
@@ -577,6 +580,7 @@ else if (interimText === "戻る") page.prev();
  \end{lstlisting}
 
 最後にページ移動を行う関数  change( page )に値をわたし，ページ移動を行う．
+
  \begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
   change( page ) {
     let pages1 = document.querySelectorAll('.page');
@@ -588,7 +592,16 @@ else if (interimText === "戻る") page.prev();
   }
  \end{lstlisting}
 
+ページの移動は，同HTMLファイル内の表示範囲を変えることで実装している．
+そうすることで，繰り返しブラウザからマイク使用の許可を求められることが無いほか，スムーズな画面切り替えを実現している．
 
+\begin{figure}[htbp]
+ \begin{center}
+  \includegraphics[width=100mm]{figure/onsei.pdf}
+ \end{center}
+  \caption{音声認識の流れ}
+  \label{fig:onsei}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -660,6 +673,37 @@ google ， ``Cloud Speech-to-Text''， \url{https://cloud.google.com/speech-to-t
 \label{index.html}
 \listinginput{1}{program/index.html}
 \newpage
+
+\section*{kigusentaku.html}
+\label{kigusentaku.html}
+\listinginput{1}{program/kigusentaku.html}
+\newpage
+
+\section*{seramic.html}
+\label{seramic.html}
+\listinginput{1}{program/seramic.html}
+\newpage
+
+\section*{index.css}
+\label{index.css}
+\listinginput{1}{program/css/index.css}
+\newpage
+
+\section*{seramic.css}
+\label{seramic.css}
+\listinginput{1}{program/css/seramic.css}
+\newpage
+
+\section*{page.js}
+\label{page.js}
+\listinginput{1}{program/js/page.js}
+\newpage
+
+\section*{seramic.js}
+\label{seramic.js}
+\listinginput{1}{program/js/seramic.js}
+\newpage
+
 
 
 \end{document}
