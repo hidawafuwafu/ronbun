@@ -1,12 +1,13 @@
 window.addEventListener('load', () => {
-    page = new Page([ "#classes", "#new2", "#new3", "#new4", "#new5", "#new6"]);
+    page = new Page(
+      [ "#classes", "#new2", "#new3", "#new4", "#new5", "#new6"]);
     page.change('#classes');
 
     let a = document.querySelector('#next_button');
     console.log(a);
 
-    document.querySelector('#next_button').addEventListener('click', () => { page.next(); });
-    document.querySelector('#prev_button').addEventListener('click', () => { page.prev(); });
+    document.querySelector('#next_button').addEventListener('click', ()=> { page.next(); });
+    document.querySelector('#prev_button').addEventListener('click', ()=> { page.prev(); });
     (function () {
         var recognition;
         var nowRecognition = false;
@@ -17,14 +18,19 @@ window.addEventListener('load', () => {
             recognition.lang = document.querySelector('#select2').value;
             recognition.continuous = true;
             recognition.interimResults = false;
+            //音声認識をするとonresultが動く
+            //eが音声認識したデータが入っている
             recognition.onresult = function (e) {
-                console.log( "seramic.js:21" + '[onresult]', e.results.length);
                 var finalText = '';
                 var interimText = '';
-                console.log( e.results[e.results.length-1][0].transcript);
-                interimText = e.results[e.results.length-1][0].transcript;
+                //e.resultsが音声認識の結果（全体）
+                //[e.results.length-1]が最新のデータ
+                //[0].transcriptが0を日本語にしたもの
+                //[0]の中のtranscriptに認識したワードが入っている
+                interimText =
+                 e.results[e.results.length-1][0].transcript;
                 $interimSpan.textContent = interimText;
-                console.log(" seramic.js:33  " + interimText );
+                //console.log(" seramic.js:33  " + interimText );
                 if (interimText === "次へ") page.next();
                 else if (interimText === "戻る") page.prev();
                 $finalSpan.textContent = finalText;

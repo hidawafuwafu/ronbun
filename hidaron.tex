@@ -115,7 +115,7 @@
 \huge
 \vspace*{\stretch{2}}
 
-2019年度　卒業論文\\[50pt]
+2020年度　卒業論文\\[50pt]
 \HUGE
 
 コーヒー抽出に関する音声認識可能な\
@@ -130,7 +130,7 @@ Webレシピの開発\\
 
 \begin{flushright} 
 \huge
-提出日　2020年1月25日
+提出日　2020年1月30日
 \vspace{\stretch{2}}
 \end{flushright}
 
@@ -305,7 +305,7 @@ Webレシピの開発\\
 
 \subsubsection{\large{ソロフィルター}}
 ソロフィルターは，カフェ等ではあまり提供されず，明確な抽出方式はないが，コーヒーを初めて淹れる人でも簡単に抽出でき，入門用に最適な器具の一つである．
-実際の器具の写真を図\ref{fig:solo}に示す
+実際の器具の写真を図\ref{fig:solo}に示す\cite{Railshon10}.
 ステンレスフィルターの上に挽いたコーヒー豆を置いた後，複数の極細の穴があるパーツに規定量のお湯を注ぐだけで，適切な湯量が豆に注がれ続ける．
 容量は1杯分のコーヒー豆しか入らないため，大人数分のコーヒーを抽出するには不向きだが，粉末感の殆どない高品質なコーヒーを手軽に味わえるため，
 コーヒーを学び始めの人や，朝の忙しい時間でも簡単に抽出することができる．
@@ -324,7 +324,7 @@ Webレシピの開発\\
 \subsubsection{\large{サイフォン}}
 サイフォンは，真空濾過式に分類される抽出器具である．
 科学の実験器具のような形状をした抽出器具であり，数ある抽出器具の中でも特に見栄えの良い器具として，注目を集めている．
-実際の器具の写真を図\ref{fig:siphon}に示す.
+実際の器具の写真を図\ref{fig:siphon}に示す\cite{Railshon11}.
 お湯を熱したことによる蒸気圧を使用し，真空に近い状態を作り出すことで，コーヒーが器具の内部を上下し，フィルターを通して濾過される．
 日本の喫茶店でも多く取り入れられていたため，馴染みの深い抽出器具でもある．
 他の器具に比べ，風味が豊かになりやすい．
@@ -341,14 +341,14 @@ Webレシピの開発\\
 
 \subsubsection{\large{クレバードリッパー}}
 クレバードリッパーは，浸漬式と透過式を合わせた抽出器具である．
-実際の器具の写真を図\ref{fig:cl}に示す.
+実際の器具の写真を図\ref{fig:cl}に示す\cite{Railshon99}.
 浸漬式と同様にコーヒー豆をお湯に浸し，ペーパーフィルターを透過することで，豆とお湯を分離する．
 味わいは，浸漬式のマイルドさと，透過式のスッキリさを併せ持っている．
 一度に多くのコーヒーを抽出できるほか，プアオーバーのような複雑な工程を踏まないため，比較的簡単に抽出を行うことができる．
 
 \begin{figure}[htbp]
  \begin{center}
-  \includegraphics[width=80mm]{figure/c.pdf}
+  \includegraphics[width=70mm]{figure/c.pdf}
  \end{center}
   \caption{クレバードリッパー}
   \label{fig:cl}
@@ -358,19 +358,20 @@ Webレシピの開発\\
 
 \subsubsection{\large{エアロプレス}}
 エアロプレスは，その名の通り空気圧を使用した抽出器具である．
-実際の器具の写真を図\ref{fig:aero}に示す．
+実際の器具の写真を図\ref{fig:aero}に示す\cite{Railshon12}．
 開発されたのは2005年であり，数多くの抽出器具の中でも特に直近に提案された器具である．
 注射器のような形状をしており，利用者自身が器具を押し込むことによって，空気圧を調整し抽出を行う．
 抽出時間が短いこと，味わいが濃厚であることが特徴である．
 2005年という直近の開発でありながら，様々なカフェで提供されている他，エアロプレスに特化した，抽出技術を競う大会が開催されたりと，シェアを順調に伸ばしている．
-
 \begin{figure}[htbp]
  \begin{center}
-  \includegraphics[width=80mm]{figure/a1.pdf}
+  \includegraphics[width=70mm]{figure/a1.pdf}
  \end{center}
   \caption{エアロプレス}
   \label{fig:aero}
 \end{figure}
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -429,6 +430,14 @@ HTML単体の記述では，単調な文章表記やレイアウトになって�
 ニューラルネットワークはいわば機械学習の類であり，それらを応用することで音声認識を成し遂げている．
 実際に，Google社の手がける音声認識サービス「Google Cloud Speech API」においてもニューラルネットワークモデルが利用されていることが述べられている\cite{Railshon2}．
 
+
+\subsubsection{\large{WebSpeechAPI}}
+WebSpeechAPIとは，JavaScriptAPIの1つである．
+JavaScriptとWebブラウザのみで，音声の合成や音声認識を可能にする．
+音声の合成は入力した文字を機械側に発音させる機能であり，音声認識は音声をテキストとして入力する機能である，
+本Webアプリケーションの音声認識はこのWebSpeechAPIを使用している．
+
+\newpage
 \begin{table}[h]
 \begin{center}
 \caption{音声認識の方法論の変遷(河原,2018)}
@@ -443,13 +452,6 @@ HTML単体の記述では，単調な文章表記やレイアウトになって�
 \label{tb:onsei}
 \end{center}
 \end{table}
-
-
-\subsubsection{\large{WebSpeechAPI}}
-WebSpeechAPIとは，JavaScriptAPIの1つである．
-JavaScriptとWebブラウザのみで，音声の合成や音声認識を可能にする．
-音声の合成は入力した文字を機械側に発音させる機能であり，音声認識は音声をテキストとして入力する機能である，
-本Webアプリケーションの音声認識はこのWebSpeechAPIを使用している．
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -541,7 +543,15 @@ JavaScriptとWebブラウザのみで，音声の合成や音声認識を可能�
 元のソースコードは音声認識を継続して行い，認識した音声をテキストとして表示するプログラムである．
 本開発ではボタンの押下，または特定の音声によって，ページ移動を行う機能を追加した．
 
+音声認識が行われると， recognition.onresultが処理を始める．
+function (e)のeには，実際の音声認識データが含まれている．
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
+recognition.onresult = function (e) {
+ \end{lstlisting}
+
 認識された音声は，テキストとして変数interimTextに格納される．
+e.resultsは過去の認識データも含めた，全てのデータが含まれている．
+[e.results.length-1]が最新のデータになっており，[0]の中のtranscript内に，実際に認識したワードが格納されている．
 \begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
 interimText = e.results[e.results.length-1][0].transcript;
  \end{lstlisting}
@@ -549,19 +559,25 @@ interimText = e.results[e.results.length-1][0].transcript;
  変数interimTextに格納されたテキストが「次へ」の場合，page.next();が実行され，「戻る」の場合，page.prev();が実行される．
  
 \begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
- if (interimText === "次へ") page.next();
+if (interimText === "次へ") page.next();
 else if (interimText === "戻る") page.prev();
  \end{lstlisting}
 
 また，図\ref{fig:recipieturan}の上部にある「前のステップ」「次のステップ」ボタンを押下することでも同様の関数が実行される．
 \begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
-    document.querySelector('#next_button').addEventListener('click', ()
-    => { page.next(); });
-    document.querySelector('#prev_button').addEventListener('click', () 
-    => { page.prev(); });
+document.querySelector('#next_button').addEventListener('click', ()
+=> { page.next(); });
+ document.querySelector('#prev_button').addEventListener('click', () 
+=> { page.prev(); });
  \end{lstlisting}
  
- page.next()とpage.prev()の処理は「page.js」にて行なっている． 
+続いてページ移動の説明をする．
+前述の通り，ページの移動は「page.js」が行う．
+
+numberは1枚目のページを0，2枚目のページを1とした時の，現在のページ番号である．
+this.page sizeは，ページの総数であり，numberと数値の差を合わせるため，1を引く．
+next()では，現在のページ数がページの総数より少なかった場合，prev()では，0より現在のページ数が大きかった場合，処理が起こる．
+this.pages[number]には，現在のページのidが入っており，next()では次のページのidを．prev()では前のページのidをchange()に渡している．
  \begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
   next() {
     let number = this.pages.indexOf( this.now );
@@ -578,9 +594,12 @@ else if (interimText === "戻る") page.prev();
     }
   }
  \end{lstlisting}
-
-最後にページ移動を行う関数  change( page )に値をわたし，ページ移動を行う．
-
+ 
+ 
+change()は画面の表示範囲を設定することで，ページ移動を行なっている．
+下記のコードの2-5行目において，全てのページを非表示にし，6行目にて，指定のidのページのみを表示させている．
+最後の7行目では，現在のページidを記録している．
+ 
  \begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
   change( page ) {
     let pages1 = document.querySelectorAll('.page');
@@ -592,9 +611,9 @@ else if (interimText === "戻る") page.prev();
   }
  \end{lstlisting}
 
-ページの移動は，同HTMLファイル内の表示範囲を変えることで実装している．
+前述の通り，ページの移動は，同HTMLファイル内の表示範囲を変えることで実装した．
 そうすることで，繰り返しブラウザからマイク使用の許可を求められることが無いほか，スムーズな画面切り替えを実現している．
-
+なお，この音声認識はGoogle Chromeのみで対応している．
 \begin{figure}[htbp]
  \begin{center}
   \includegraphics[width=100mm]{figure/onsei.pdf}
@@ -628,7 +647,8 @@ else if (interimText === "戻る") page.prev();
 
 \newpage
 \section*{謝辞}
-本研究の遂行及び本論文の作成にあたり，須田研究室の仲間に深く感謝の意を表します．そして，何よりも本論文の作成にあたり，多大なる御指導及び御助言を頂きました須田宇宙准教授に深く感謝の意を表します．
+本研究の遂行及び本論文の作成にあたり，須田研究室の仲間に多くの手助けを頂きました，深く感謝の意を表します．
+そして，本論文の作成にあたり，多大なる御指導及び御助言を頂きました須田宇宙准教授に深く感謝の意を表します．
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %参考文献
@@ -638,6 +658,14 @@ else if (interimText === "戻る") page.prev();
 %\bibitem{kawahara}名前, ``書籍名'', 出版, Vol71, No11, 年, pp197-203
 \bibitem{Railshon1} 
 全日本コーヒー協会，``日本のコーヒー消費と株価''，\url{http://coffee.ajca.or.jp/wp-content/uploads/2019/04/data00c_2019_04.pdf}\\
+\bibitem{Railshon10} 
+スターバックス コーヒー ジャパン，``スターバックス　ソロフィルター'，\url{https://www.starbucks.co.jp/brewing/dripper/4524785211094/}\\
+\bibitem{Railshon11} 
+HARIO，``テクニカ 3人用''，\url{https://www.hario.com/seihin/productdetail.php?product=TCA-3}\\
+\bibitem{Railshon99} 
+LILO COFFEE ROASTERS，`E.K.INT'L CLEVER DRIPPER・クレバードリッパー L''，\url{https://lilocoffee.thebase.in/items/158429103}\\
+\bibitem{Railshon12} 
+小川珈琲，``エアロプレスコーヒーメーカー''，\url{https://www.oc-ogawa.co.jp/products/tools/aeropress/}\\
 \bibitem{Railshon4} 
 スターバックス コーヒー ジャパン， ``おいしいコーヒーをいれるコツ''， \url{https://www.starbucks.co.jp/howto/coffee/skill.html}\\
 \bibitem{Railshon5} 
@@ -652,11 +680,6 @@ UCC ， ``おいしいコーヒーの淹れ方"， \url{https://www.ucc.co.jp/en
 google ， ``Cloud Speech-to-Text''， \url{https://cloud.google.com/speech-to-text/?hl=ja}\\
 \bibitem{Railshon9} 
 宗定 洋平， ``[HTML5] Web Speech APIに入門'， \url{https://www.yoheim.net/blog.php?q=20140701}\\
-%\bibitem{Railshon7} 
-%KoheiShitaune，``TrainingAssistant''，\url{https://github.com/shkh/TrainingAssistant}\\
-
-%\bibitem{Railshon8} 
-%教育芸術社 市川都志春 編著，``こどものバイエル第１集''，2004年10月30日初版発行，2018年3月第34版発行，pp5\\
 
 %\bibitem{Railshon9} 
 %株式会社ドレミ楽譜出版社 橋本晃一 編著，``中級レベルで弾けるクラシック名曲ピアノ曲集''，1994年1月初版発行，2007年2月20日第7版発行，pp26-27\
