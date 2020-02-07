@@ -1,0 +1,62 @@
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[a4j,10pt]{jsarticle}
+
+\usepackage{newtxtext} % アルファベットなどをTimesNewRomanで
+%\usepackage{newpxtext} % アルファベットなどをPalatinoで
+% 両方共コメントアウトするとComputer Modernで
+
+\usepackage{okumacro} %奥村先生による様々な便利機能
+\usepackage{graphicx}
+%\usepackage{url} %でき上がったPDFファイルからのリンク機能を有効にする・・・はず
+%\usepackage{array}
+\usepackage{tabularx} %2段組などで使う・・・はず
+\usepackage{colortbl} %なんだっけ？
+%\usepackage{float}
+%\usepackage{makeidx} %目次を作ってくれる（ただしjsarticle用？）
+%\makeindex
+\usepackage{fouriernc}
+\usepackage[deluxe]{otf} %日本語の太字をきちんと太字で表す
+\usepackage{amsmath} %数式を，業界標準にする
+\usepackage{moreverb} %ソースコードを引用する際に使う
+%\usepackage{verbatim} %ソースコードを引用する際に使う（普段は上の行のを使う）
+\usepackage[margin=2cm]{geometry} %上下左右の余白設定
+\usepackage{dcolumn} 
+\usepackage{ascmac}
+%\usepackage{hyperref} %でき上がったPDFファイルからのリンク機能を有効にする・・・はず
+\usepackage{color} %文字の色を変更する場合に使う
+\usepackage{enumerate} %箇条書きを装飾する際に使う
+ \usepackage{url}
+
+\renewcommand{\headfont}{\bfseries} %見出しの英数字をゴシックにしない
+
+\begin{document}
+\begin{flushright}
+
+
+肥田\ 雄也 %製作者
+\end{flushright}
+
+\begin{center}
+\textbf{ \LARGE{質疑応答} }
+\end{center}
+
+
+\begin{table}[h]
+\begin{tabular}{|l|l|}
+\hline
+質問項目&回答                       \\ \hline
+動画は載せないのか                   & 抽出中は刻々と状況が変化し，じっくり動画を見る時間がないため，記載していません  \\ \hline
+サーバーで動いているのか                & ローカル環境で動かしています．サーバーでも動くとは思いますが，検証はしていません           \\ \hline
+写真は自分で撮ったのか                 & 一部お借りしている写真もありますが，レシピの写真は殆ど自身で撮影したものです \\ \hline
+蒸し方は見れるのか                   & プアオーバーのレシピ閲覧画面，STEP2で閲覧できます                        \\ \hline
+挽き方は確認できるのか                 & 各レシピのSTEP1に挽き具合が記載されています．手順については記載していません    \\ \hline
+\end{tabular}
+\end{table}
+
+＊音声認識機能は，外部サーバーにて処理を行うため，インターネット接続がない場合利用できません．
+
+＊音声認識機能は，GoogleChromeのみで使用可能です．音声認識ボタンを押したのち，ブラウザ側でマイクの使用を許可して下さい．
+
+
+\end{document}
